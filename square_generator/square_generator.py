@@ -16,6 +16,8 @@ class SquareGenerator:
 
 class CubicGenerator(SquareGenerator):
     def generate_squares(self, start, end):
-        if end < start:
-            raise ValueError("End of range must be greater than start")
+        if start > end:
+            raise ValueError("Start of range cannot be greater than end")
         return [i**3 for i in range(start, end + 1)]
+
+

@@ -1,7 +1,8 @@
 import math
 
 
-from square_generator import SquareGenerator
+from square_generator import CubicGenerator
+
 
 generator = SquareGenerator()
 try:
@@ -36,7 +37,12 @@ if __name__ == '__main__':
     except ValueError as e:
         print(e)
 
-
+cubic_generator = CubicGenerator()
+try:
+    cubes = cubic_generator.generate_squares(11, 10)
+    print(cubes)
+except ValueError as e:
+    print(f"Error: {e}")
 
 
 
