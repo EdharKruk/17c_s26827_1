@@ -12,3 +12,10 @@ class SquareGenerator:
         except ValueError as e:
             print(e)
             return []
+
+
+class CubicGenerator(SquareGenerator):
+    def generate_squares(self, start, end):
+        if end < start:
+            raise ValueError("End of range must be greater than start")
+        return [i**3 for i in range(start, end + 1)]
