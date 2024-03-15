@@ -1,3 +1,5 @@
+import math
+
 
 class SquareGenerator:
     def generate_squares(self, start, end):
@@ -5,6 +7,8 @@ class SquareGenerator:
             return "End must be greater than start"
         return [i**2 for i in range(start, end + 1)]
 
+    def generate_square_roots(self, start, end):
+        return [math.sqrt(i) for i in self.generate_squares(start, end)]
 
 
 def generate_squares(start, end):
@@ -20,6 +24,9 @@ if __name__ == '__main__':
     generator = SquareGenerator()
     squares2 = generator.generate_squares(1, 10)
     print(squares2)
+    generator = SquareGenerator()
+    square_roots = generator.generate_square_roots(1, 10)
+    print(square_roots)
 
 
 
