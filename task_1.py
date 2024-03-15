@@ -1,18 +1,17 @@
 import math
 
 
-class SquareGenerator:
-    def generate_squares(self, start, end):
-        if end < start:
-            raise ValueError("End of range must be greater than start")
-        return [i ** 2 for i in range(start, end + 1)]
+from square_generator import SquareGenerator
 
-    def generate_square_roots(self, start, end):
-        try:
-            return [math.sqrt(i) for i in self.generate_squares(start, end)]
-        except ValueError as e:
-            print(e)
-            return []
+generator = SquareGenerator()
+try:
+    squares = generator.generate_squares(1, 10)
+    print(squares)
+    square_roots = generator.generate_square_roots(1, 10)
+    print(square_roots)
+except ValueError as e:
+    print(e)
+
 
 
 def generate_squares(start, end):
